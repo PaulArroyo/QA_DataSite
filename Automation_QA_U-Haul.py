@@ -67,8 +67,10 @@ def TC_UH_007():
 
 def Move_Online_Today():
     
+    #Let's search the correct cell
     MainHeaderMenuOptions = driver.find_elements(by = By.CLASS_NAME, value = "cell")
     
+    #Hover the Storage Tile
     i=0
     while i < len(MainHeaderMenuOptions):
         if(MainHeaderMenuOptions[i].text == "Storage"):
@@ -78,6 +80,7 @@ def Move_Online_Today():
         i = i + 1    
     time.sleep(2)
 
+    #Click on Move-In Online Today!
     MoveOnlineStorageXpath = "/html/body/header/nav/div/ul/li[8]/ul/li[4]"                            
     MoveOnlineStorage = driver.find_element(By.XPATH, MoveOnlineStorageXpath)
     MoveOnlineStorage.click()
@@ -131,8 +134,10 @@ def TC_UH_008():
     time.sleep(5)
 
 
+
 #RUN!
 TC_UH_007()
 Move_Online_Today()
 TC_UH_008()
+
 
